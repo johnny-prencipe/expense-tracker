@@ -1,5 +1,6 @@
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 
 export default function Expenses(props) {
   props.expenses.forEach(expense => console.log(expense));
@@ -13,5 +14,5 @@ export default function Expenses(props) {
     );
   });
 
-  return <section className="expenses">{expenses}</section>;
+  return <Card className="expenses">{expenses}</Card>;
 }
