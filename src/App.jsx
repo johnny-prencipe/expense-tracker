@@ -6,9 +6,10 @@ export default function App() {
   const expenses = [
     { date: new Date(2021, 3, 16), title: "Car Insurance", amount: 405.72 },
     { date: new Date(2021, 3, 15), title: "Phone bill", amount: 80.02 },
-    { date: new Date(2021, 3, 15), title: "Rent", amount: 900.0 },
+    { date: new Date(2021, 3, 15), title: "Rent", amount: 450.0 },
     { date: new Date(2021, 3, 14), title: "Groceries", amount: 152.13 },
     { date: new Date(2021, 3, 13), title: "Liquor", amount: 63.32 },
+    { date: new Date(2021, 2, 31), title: "Rent", amount: 450.0 },
   ];
   return (
     <div>
@@ -36,6 +37,11 @@ export default function App() {
         date={expenses[4].date}
         title={expenses[4].title}
         amount={expenses[4].amount}
+      />
+      <ExpenseItem
+        date={expenses[5].date}
+        title={expenses[5].title}
+        amount={expenses[5].amount}
       />
     </div>
   );
