@@ -1,8 +1,6 @@
 import React from "react";
 
-import logo from "./logo.svg";
-import "./App.css";
-import ExpenseItem from "./components/Expenses/ExpenseItem";
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 export default function App() {
@@ -17,7 +15,7 @@ export default function App() {
 
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <Expenses expenses={expenses} />
     </div>
   );
