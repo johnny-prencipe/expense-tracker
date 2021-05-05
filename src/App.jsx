@@ -1,3 +1,5 @@
+import React from "react";
+
 import logo from "./logo.svg";
 import "./App.css";
 import ExpenseItem from "./components/ExpenseItem";
@@ -12,6 +14,7 @@ export default function App() {
     { date: new Date(2021, 3, 13), title: "Liquor", amount: 63.32 },
     { date: new Date(2021, 2, 31), title: "Rent", amount: 450.0 },
   ];
+
   return (
     <div>
       <h2>Let's get started!</h2>
