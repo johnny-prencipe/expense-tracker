@@ -50,6 +50,10 @@ export default function ExpenseForm() {
     };
 
     console.log(expenseData);
+    
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
 
   return (
@@ -59,8 +63,7 @@ export default function ExpenseForm() {
           <label>Title</label>
           <input
             type="text"
-            name="title"
-            id="title"
+            value={enteredTitle}
             onChange={titleChangeHandler}
           />
         </div>
@@ -70,8 +73,7 @@ export default function ExpenseForm() {
             type="number"
             min="0.01"
             step="0.01"
-            name="amount"
-            id="amount"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -81,8 +83,7 @@ export default function ExpenseForm() {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            name="date"
-            id="date"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
