@@ -4,9 +4,9 @@ import './ExpenseForm.css';
 
 export default function ExpenseForm(props) {
   // State handlers for input form
-  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredTitle, setEnteredTitle]   = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  const [enteredDate, setEnteredDate]     = useState('');
 
   const titleChangeHandler  = event => setEnteredTitle(event.target.value);
   const amountChangeHandler = event => setEnteredAmount(event.target.value);
