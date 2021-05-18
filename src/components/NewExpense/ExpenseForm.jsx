@@ -2,43 +2,15 @@ import React, { useState } from 'react';
 
 import './ExpenseForm.css';
 
-export default function ExpenseForm() {
+export default function ExpenseForm(props) {
   // State handlers for input form
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
 
-  const titleChangeHandler = event => setEnteredTitle(event.target.value);
+  const titleChangeHandler  = event => setEnteredTitle(event.target.value);
   const amountChangeHandler = event => setEnteredAmount(event.target.value);
-  const dateChangeHandler = event => setEnteredDate(event.target.value);
-
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: '',
-  //   enteredAmount: '',
-  //   enteredDate: '',
-  // });
-
-  // const titleChangeHandler = event => {
-  //   // setUserInput({
-  //   //   ...userInput,
-  //   //   enteredTitle = event.target.value
-  //   // });
-  //   setUserInput(prevState => {
-  //     return { ...prevState, enteredTitle: event.target.value }
-  //   });
-  // };
-  // const amountChangeHandler = event => {
-  //   setUserInput({
-  //     ...userInput,
-  //     enteredAmount = event.target.value
-  //   });
-  // };
-  // const dateChangeHandler = event => {
-  //   setUserInput({
-  //     ...userInput,
-  //     enteredDate = event.target.value
-  //   });
-  // }
+  const dateChangeHandler   = event => setEnteredDate(event.target.value);
 
   const submitHandler = event => {
     event.preventDefault();
@@ -49,11 +21,14 @@ export default function ExpenseForm() {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
-
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    if (expenseData.title && expenseData.amount && expenseData.date) {
+      props.onSaveExpenseData(expenseData);
+      setEnteredTitle('');
+      setEnteredAmount('');
+      setEnteredDate('');
+    } else {
+      console.error('invalid parameters!');
+    }
   };
 
   return (

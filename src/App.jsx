@@ -13,9 +13,14 @@ export default function App() {
     { id: 'e6', date: new Date(2021, 2, 31), title: "Rent", amount: 450.0 },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('addExpenseHandler fired from App.jsx');
+    console.log(expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
