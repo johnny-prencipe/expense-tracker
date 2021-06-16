@@ -15,17 +15,20 @@ export default function Expenses(props) {
     );
   });
 
-  const expenses = filteredExpenses.map(expense => {
-    console.log(filteredExpenses);
-    return (
-      <ExpenseItem
-        key={expense.id}
-        date={expense.date}
-        title={expense.title}
-        amount={expense.amount}
-      />
-    );
-  });
+  let expensesContent = <p>No expenses found</p>;
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map(expense => {
+      return (
+        <ExpenseItem
+          key={expense.id}
+          date={expense.date}
+          title={expense.title}
+          amount={expense.amount}
+        />
+      );
+    });
+  }
 
   const filterChangeHandler = selectedYear => {
     setFilteredYear(selectedYear);
@@ -38,7 +41,7 @@ export default function Expenses(props) {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {filteredExpenses.length === 0 ? <p>No expenses found</p> : expenses}
+        {expensesContent}
       </Card>
     </div>
   );
