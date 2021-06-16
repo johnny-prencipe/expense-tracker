@@ -9,7 +9,9 @@ export default function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState('2020');
 
   const filteredExpenses = props.expenses.filter(expense => {
-    return expense.date.getFullYear().toString() === filteredYear;
+    return (
+      expense.date.getFullYear().toString() === filteredYear || filteredYear === 'All'
+    );
   });
 
   const expenses = filteredExpenses.map(expense => {
