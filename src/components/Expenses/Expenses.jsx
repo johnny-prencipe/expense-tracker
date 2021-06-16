@@ -10,7 +10,12 @@ export default function Expenses(props) {
 
   const expenses = props.expenses.map(expense => {
     return (
-      <ExpenseItem date={expense.date} title={expense.title} amount={expense.amount} />
+      <ExpenseItem
+        key={expense.id}
+        date={expense.date}
+        title={expense.title}
+        amount={expense.amount}
+      />
     );
   });
 
