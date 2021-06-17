@@ -28,6 +28,9 @@ export default function ExpenseForm(props) {
   const hideFormHandler = event => {
     setForm(hiddenForm);
   };
+
+  // Not DRY. Needs refactoring.
+
   const showFormHandler = event => {
     setForm(
       <form autoComplete="off" onSubmit={submitHandler}>
